@@ -1,6 +1,7 @@
 package com.bity.bitykart.model;
 
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @Table(name = "product")
@@ -16,8 +17,9 @@ public class Product {
 
     private double price;
 
-    @Column(name = "image_url") // This maps to the database column
-    private String imageUrl; // Use camelCase in Java
+    @Column(name = "image_url")
+    @JsonProperty("image_url") // This maps JSON's "image_url" to this field
+    private String imageUrl;
 
     private String category;
 
@@ -32,7 +34,7 @@ public class Product {
         this.category = category;
     }
 
-    // Getters and Setters
+    // Getters and Setters (keep them as they are)
     public Long getId() {
         return id;
     }
