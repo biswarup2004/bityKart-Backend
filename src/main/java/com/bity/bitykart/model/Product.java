@@ -14,7 +14,7 @@ public class Product {
     private String description;
 
     private double price;
-    private String imageUrl;
+    private String image_url;
     private String category;
 
     public Long getId() {
@@ -50,11 +50,11 @@ public class Product {
     }
 
     public String getImageUrl() {
-        return imageUrl;
+        return image_url;
     }
 
     public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+        this.image_url = imageUrl;
     }
 
     public String getCategory() {
