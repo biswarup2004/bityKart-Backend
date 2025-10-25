@@ -3,6 +3,7 @@ package com.bity.bitykart.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "product")
 public class Product {
 
     @Id
@@ -14,9 +15,24 @@ public class Product {
     private String description;
 
     private double price;
-    private String imageUrl;
+
+    @Column(name = "image_url") // This maps to the database column
+    private String imageUrl; // Use camelCase in Java
+
     private String category;
 
+    // Constructors
+    public Product() {}
+
+    public Product(String name, String description, double price, String imageUrl, String category) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.imageUrl = imageUrl;
+        this.category = category;
+    }
+
+    // Getters and Setters
     public Long getId() {
         return id;
     }
@@ -64,8 +80,4 @@ public class Product {
     public void setCategory(String category) {
         this.category = category;
     }
-
-
-
-
 }
