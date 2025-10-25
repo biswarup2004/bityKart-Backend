@@ -16,8 +16,8 @@ public class Product {
 
     private double price;
 
-    @Column(name = "image_url") // This maps to the database column
-    private String imageUrl; // Use camelCase in Java
+
+    private String imageUrl;
 
     private String category;
 
